@@ -6,10 +6,14 @@ using UnityEngine;
 public abstract class BodyBaseBehavour : MonoBehaviour
 {
     private int maxEnlargeLevel;
-
+    
     public Rigidbody2D rb;
     public EyeMovements[] eyes;
     public int enlargeLevel;
+    public ParticleSystem appearEffect;
+    public ParticleSystem jumpEffect;
+    public ParticleSystem disappearEffect;
+    
     [SerializeField]private float currMoveForce;
     private bool isInitiated = true;
 
@@ -24,6 +28,8 @@ public abstract class BodyBaseBehavour : MonoBehaviour
             if(hitObj.transform.GetComponent<Rigidbody2D>())
                 AddExplosionForce(hitObj.transform.GetComponent<Rigidbody2D>(),transform.position,100f);  
         }
+
+        Instantiate(appearEffect, transform);
         
         rb = GetComponent<Rigidbody2D>();
     }
