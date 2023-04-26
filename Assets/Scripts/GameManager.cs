@@ -19,9 +19,31 @@ public class GameManager : MonoBehaviour
 
     public int maxMultiplyAmount;
     public int maxEnlargeLevel;
+
     private void Awake()
     {
         Instance = this;
         playerController.interactCircle = interactCircle;
     }
+
+    public void StartGame()
+    {
+
+    }
+
+    public void PauseGame()
+    {
+
+    }
+
+    public void EndLevel(bool win)
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
