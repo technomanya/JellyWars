@@ -20,6 +20,10 @@ public class EyeMovements : MonoBehaviour
             eyeInternal.GetComponent<Rigidbody2D>().AddForce(direction*10f);
             return;
         }
-        eyeInternal.transform.localPosition = Vector3.zero;
+        else
+        {
+            eyeInternal.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+        //eyeInternal.transform.localPosition = Vector3.zero;
     }
 }
